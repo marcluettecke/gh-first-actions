@@ -1,4 +1,4 @@
-name: 'Practice Project 04'
+name: Deployment Practice 04
 on: push
 jobs:
     lint_test_deploy:
