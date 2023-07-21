@@ -1,0 +1,12 @@
+name: Display Issue Information
+on: issues
+jobs:
+    print:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out code
+              uses: actions/checkout@v3
+
+            - name: Print Issue Info
+              run: |
+                  echo "Issue Title: ${{ toJson(github.event.issue) }}"
