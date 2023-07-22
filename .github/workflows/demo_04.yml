@@ -12,8 +12,6 @@ jobs:
             run:
                 working-directory: ./04_starting_project
         steps:
-            - name: Output event data
-              run: /bin/echo "${{ toJSON(github.event) }}"
             - name: Get code
               uses: actions/checkout@v3
             - name: Install dependencies
