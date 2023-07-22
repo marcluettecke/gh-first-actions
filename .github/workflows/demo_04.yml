@@ -4,7 +4,7 @@ on:
         types: [opened, edited]
     workflow_dispatch:
     push:
-        branches: [main, 'dev-*', 'feat/**']
+        branches: [master, 'dev-*', 'feat/**']
 jobs:
     test_deploy:
         runs-on: ubuntu-latest
