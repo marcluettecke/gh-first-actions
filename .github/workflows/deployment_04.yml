@@ -1,7 +1,8 @@
 name: Deployment Practice 04
 on:
     push:
-        branches: dev
+        paths-ignore:
+            - '.github/workflows/*'
 jobs:
     lint_test_deploy:
         runs-on: ubuntu-latest
