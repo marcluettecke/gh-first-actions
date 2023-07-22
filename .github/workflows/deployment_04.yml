@@ -1,5 +1,7 @@
 name: Deployment Practice 04
-on: push
+on:
+    push:
+        branches: dev
 jobs:
     lint_test_deploy:
         runs-on: ubuntu-latest
