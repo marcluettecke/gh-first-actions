@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         defaults:
             run:
-                working-directory: ./04_starting_project
+                working-directory: ./04_starting_project/
         steps:
             - name: Output event data
               run: echo "${{ toJSON(github.event) }}"
