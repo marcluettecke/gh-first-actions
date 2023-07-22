@@ -3,6 +3,8 @@ on:
     pull_request:
         types: [opened, edited]
     workflow_dispatch:
+    push:
+        branches: [main, 'dev-*', 'feat/**']
 jobs:
     test_deploy:
         runs-on: ubuntu-latest
@@ -10,6 +12,8 @@ jobs:
             run:
                 working-directory: ./04_starting_project
         steps:
+            - name: Output event data
+              run: /bin/echo "${{ toJSON(github.event) }}"
             - name: Get code
               uses: actions/checkout@v3
             - name: Install dependencies
