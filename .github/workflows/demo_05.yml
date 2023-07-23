@@ -48,4 +48,3 @@ jobs:
                   name: dist-files
             - name: Output contents
               run: ls
-              working-directory: ./05_starting_project
