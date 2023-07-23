@@ -47,4 +47,4 @@ jobs:
               with:
                   name: dist-files
             - name: Output contents
-              run: ls "${{ github.workspace }}/dist-files"
+              run: ls -R "${{ github.workspace }}"
