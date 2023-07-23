@@ -45,5 +45,3 @@ jobs:
         defaults:
             run:
                 working-directory: ./05_starting_project
-        steps:
-            - name:
