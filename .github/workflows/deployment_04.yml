@@ -1,6 +1,7 @@
 name: Deployment Practice 04
 on:
     push:
+        branches: ['dev-*', 'feat/**']
         paths-ignore:
             - '.github/workflows/*'
 jobs:

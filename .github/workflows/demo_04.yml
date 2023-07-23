@@ -4,7 +4,7 @@ on:
         types: [opened, edited]
     workflow_dispatch:
     push:
-        branches: [master, 'dev-*', 'feat/**']
+        branches: ['dev-*', 'feat/**']
         paths-ignore:
             - '.github/workflows/*'
 jobs:
