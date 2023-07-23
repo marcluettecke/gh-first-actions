@@ -6,32 +6,31 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
-        defaults:
-            run:
-                working-directory: ./05_starting_project
         steps:
             - name: Get code
               uses: actions/checkout@v3
             - name: Install dependencies
               run: npm ci
+              working-directory: ./05_starting_project
             - name: Lint code
               run: npm run lint
+              working-directory: ./05_starting_project
             - name: Test code
               run: npm run test
+              working-directory: ./05_starting_project
 
     build:
         needs: test
         runs-on: ubuntu-latest
-        defaults:
-            run:
-                working-directory: ./05_starting_project
         steps:
             - name: Get code
               uses: actions/checkout@v3
             - name: Install dependencies
               run: npm ci
+              working-directory: ./05_starting_project
             - name: Build website
               run: npm run build
+              working-directory: ./05_starting_project
             - name: Upload artifacts
               uses: actions/upload-artifact@v3
               with:
@@ -40,13 +39,13 @@ jobs:
     deploy:
         needs: build
         runs-on: ubuntu-latest
-        defaults:
-            run:
-                working-directory: ./05_starting_project
         steps:
+            - name: Get code
+              uses: actions/checkout@v3
             - name: Get build artifacts
               uses: actions/download-artifact@v3
               with:
                   name: dist-files
             - name: Output contents
               run: ls
+              working-directory: ./05_starting_project
