@@ -1,4 +1,4 @@
-name: Deployment
+name: Environment variables 06
 on:
     push:
         branches:
